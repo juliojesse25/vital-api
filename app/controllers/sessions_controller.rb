@@ -5,9 +5,9 @@ class SessionsController < ApplicationController
             .find_by(email: params["user"]["email"])
             .try(:authenticate, params["user"]["password"])
 
-    if user
+    if user.valid?
       sessions_count = user.sessions_count + 1 
-      last_login = Time.now
+      last_login = DateTime.now.in_time_zone("Eastern Time (US & Canada)")
       user.update_attributes(:sessions_count => sessions_count, :last_login => last_login)
       session[:user_id] = user.id
       render json: {
@@ -34,7 +34,7 @@ class SessionsController < ApplicationController
   end
 
   def logout
-    reset_session
+    # reset_session
     render json: { status: 200, logged_out: true }
   end
 end
