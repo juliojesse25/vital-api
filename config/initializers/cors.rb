@@ -34,7 +34,7 @@ Rails.application.config.middleware.insert_before 0, Rack::Cors do
   end
 
   allow do
-    origins "https://your-production-app-here.com"
+    origins "https://juliojesse25.github.io/my-vital-frontend"
     resource "*", headers: :any, methods: [:get, :post, :put, :patch, :delete, :options, :head], credentials: true
   end
 end
