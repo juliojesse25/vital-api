@@ -1,6 +1,6 @@
 #!/bin/bash
 
-curl "http://localhost:3000/registrations" \
+curl "http://localhost:3001/registrations" \
   --include \
   --request POST \
   --header "Content-Type: application/json" \
