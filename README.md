@@ -1,24 +1,38 @@
-# README
+## Vital API
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+**_Description_**
 
-Things you may want to cover:
+This is the Backend of the Vital Full Stack Web Application I developed using Ruby on Rails and MySQL for a database.
 
-* Ruby version
+**_Technologies_**
 
-* System dependencies
+- Ruby on Rails
+- MySQL
+- Curl Scripts
 
-* Configuration
+**_Future Features_**
 
-* Database creation
+- Add a Logins resource so that all logins are stored in a logins table.
+- Add a change password route so the user is able to change passwords.
 
-* Database initialization
+**_User Stories_**
 
-* How to run the test suite
+As a user I would like to be able to;
 
-* Services (job queues, cache servers, search engines, etc.)
+- Register and Login.
+- See the number of times I have logged in.
+- See my last login date and time.
+- Logout when logged in.
 
-* Deployment instructions
+**_Routes_**
 
-* ...
+`resources :sessions, only: [:create]`
+`resources :registrations, only: [:create]`
+`delete :logout, to: "sessions#logout"`
+`get :logged_in, to: "sessions#logged_in"`
+
+**_Links_**
+
+Link to frontend repo: https://github.com/juliojesse25/my-vital-frontend
+
+Link to backend repo: https://github.com/juliojesse25/vital-api
